@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+	<title>Github Users</title>
+	<meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="js/github_cards.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/github_style.css">
+</head>
+<body ng-app="githubCards">
+	<div ng-controller="githubCardsController">
+		<div id="github-form">
+			<form ng-submit="getUserInfo()">
+				<input type="text" name="githubLoginName" ng-model="githubLoginName" placeholder="github login" ng-required="true">
+				<button>Add</button>
+			</form>
+			<span>{{errorMsg}}</span>
+		</div>
+		<hr>
+		<div id="github-filters">
+			<span>Sort by:</span>
+			<li ng-repeat="orderFilter in orderFilters" ng-click="changeOrder(orderFilter)" ng-class="{'active' : activeFilter === orderFilter}">{{orderFilter}}
+				<span ng-if="!orderToggle && activeFilter === orderFilter">&#9662;</span>
+				<span ng-if="orderToggle && activeFilter === orderFilter">&#9652;</span>
+			</li>
+		</div>
+		<div id="github-profiles">
+			<div ng-repeat="user in userList | orderBy:sortFilter">
+				<a ng-href="{{user.html_url}}">
+					<div>
+						<div class="profile-image">
+							<div ng-click="removeUser(user, $event)">x</div>
+							<img ng-src="{{user.avatar_url}}" style="width: 100%;">
+						</div>
+						<div class="profile-details">
+							<div class="profile-name">
+								<span>{{user.name}}</span>
+							</div>
+							<div class="profile-location">
+								<span>Location:</span>
+								<span>{{user.location}}</span>
+							</div>
+							<div class="profile-followers">
+								<span>Followers:</span>
+								<span>{{user.followers}}</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</body>

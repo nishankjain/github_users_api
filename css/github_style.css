@@ -1,0 +1,143 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+}
+
+body > div {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#github-form {
+	padding-top: 3%;
+	padding-bottom: 1%;
+}
+
+#github-form form {
+	display: inline-block;
+}
+
+#github-form span {
+	display: inline-block;
+}
+
+input {
+	padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    outline: none;
+}
+
+input:focus {
+	box-shadow: inset 0px 0px 8px -4px rgba(0,0,0,0.75); 
+}
+
+button {
+	padding: 9px;
+    background-color: #2c699f;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    width: 50px;
+    font-weight: bold;
+    outline: none;
+}
+
+hr {
+    margin-left: 0;
+    text-align: left;
+    padding: 0; 
+    border: 0;
+    height: 1px;
+    border-top: 1px solid #eeeeee;
+}
+
+#github-filters {
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+#github-filters li {
+	list-style: none;
+	display: inline-block;
+	padding-left: 1%;
+	padding-right: 1%;
+	cursor: pointer;
+	text-transform: capitalize;
+}
+
+#github-filters li:hover {
+	color: blue;
+}
+
+#github-profiles > div {
+	width: 239px;
+	display: inline-block;
+	padding: 0 30px 50px 0;
+}
+
+#github-profiles > div > a > div {
+	border-radius: 2px;
+	padding: 2px;
+	transition: box-shadow 0.2s linear 0s;
+	box-shadow: 0px 0px 6px 0px rgba(135,135,135,1);
+	color: #000000;
+}
+
+#github-profiles > div > a > div:hover {
+	transition: box-shadow 0.2s linear 0s;
+	box-shadow: 0px 0px 6px 2px rgba(135,135,135,1);
+}
+
+.profile-details {
+	padding: 15px;
+}
+
+.profile-details > div {
+	padding: 3px;
+}
+
+.profile-name {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.profile-location span:nth-child(1) {
+	font-weight: bold;
+}
+
+.profile-followers span:nth-child(1) {
+	font-weight: bold;
+}
+
+.profile-image {
+	position: relative;
+}
+
+.profile-image > div {
+	position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background-color 0.2s linear 0s, color 0.2s linear 0s;
+}
+
+.profile-image > div:hover {
+	background-color: #000000;
+	color: #ffffff;
+	transition: background-color 0.2s linear 0s, color 0.2s linear 0s;
+}
+
+.active {
+	color: blue;
+}
